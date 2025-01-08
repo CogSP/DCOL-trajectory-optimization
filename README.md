@@ -18,7 +18,7 @@ By [Simone Palumbo](https://github.com/CogSP), [Benedetta Rota](https://github.c
 
 ## Introduction
 
-This project is based on [this Julia library](https://github.com/kevin-tracy/DifferentiableCollisions.jl/tree/master?tab=readme-ov-file)
+This project is based on [this Julia library](https://github.com/kevin-tracy/DifferentiableCollisions.jl/tree/master?tab=readme-ov-file).
 
 
 ## Installation

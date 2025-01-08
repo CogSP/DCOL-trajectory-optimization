@@ -1,0 +1,6 @@
+meshcat
+numpy
+matplotlib
+tqdm
+scipy
+h5py

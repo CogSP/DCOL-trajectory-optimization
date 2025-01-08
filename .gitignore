@@ -1,0 +1,12 @@
+__pycache__/
+primitives/__pycache__/
+proximity/__pycache__/
+systems/__pycache__/
+utils/__pycache__/
+
+# Virtual environment folders
+env/
+venv/
+.venv/
+
+results_images/

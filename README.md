@@ -18,7 +18,7 @@ By [Simone Palumbo](https://github.com/CogSP), [Benedetta Rota](https://github.c
 
 ## Introduction
 
-This project aims to develop a differentiable collision detection system, re-implementing in Python [this Julia library](https://github.com/kevin-tracy/DifferentiableCollisions.jl/tree/master?tab=readme-ov-file)
+This project develops a differentiable collision detection system in Python, baseed on [this Julia library](https://github.com/kevin-tracy/DifferentiableCollisions.jl/tree/master?tab=readme-ov-file)
 
 
 ## Installation

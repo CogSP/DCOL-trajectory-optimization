@@ -1,6 +1,6 @@
 # AMR24-FP6-DCOL
 
-This repo contains the code for a differentiable collision detection system, using several shapes as convex primitives. 
+This repo contains a trajectory optimization and differentiable collision detection algorithm, using several shapes as convex primitives. 
 
 <img src="extras/images/alpha_polytopes.png" alt="Two Primitives" width="400">
 
@@ -18,7 +18,7 @@ By [Simone Palumbo](https://github.com/CogSP), [Benedetta Rota](https://github.c
 
 ## Introduction
 
-This project develops a differentiable collision detection system in Python, baseed on [this Julia library](https://github.com/kevin-tracy/DifferentiableCollisions.jl/tree/master?tab=readme-ov-file)
+This project is based on [this Julia library](https://github.com/kevin-tracy/DifferentiableCollisions.jl/tree/master?tab=readme-ov-file)
 
 
 ## Installation

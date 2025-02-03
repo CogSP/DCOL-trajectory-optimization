@@ -1,4 +1,4 @@
-# AMR24-FP6-DCOL
+# DCOL-autonomous-driving
 
 This repo contains a trajectory optimization and differentiable collision detection algorithm, using several shapes as convex primitives. 
 
@@ -32,7 +32,7 @@ To install and set up this project locally, follow these steps:
 
 2. **Navigate to the project directory:**
    ```bash
-   cd AMR24-FP6-DCOL
+   cd DCOL-autonomous-driving
    ```
 
 3. **(optional) Create a virtual environment**

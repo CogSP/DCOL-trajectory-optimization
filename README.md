@@ -1,10 +1,10 @@
-# DCOL-autonomous-driving
+# AMR24-FP6-DCOL
 
-This repo contains a trajectory optimization and differentiable collision detection algorithm, using several shapes as convex primitives. 
+This repo contains the code for a differentiable collision detection system, using several shapes as convex primitives. 
 
 <img src="extras/images/alpha_polytopes.png" alt="Two Primitives" width="400">
 
-By [Simone Palumbo](https://github.com/CogSP), [Benedetta Rota](https://github.com/BenedettaRota) and [Camilla Rota](https://github.com/camillarota).
+By Benedetta Rota (1936424), Camila Rota (1936447), Simone Palumbo (1938214)
 
 
 ## Table of Contents
@@ -18,7 +18,7 @@ By [Simone Palumbo](https://github.com/CogSP), [Benedetta Rota](https://github.c
 
 ## Introduction
 
-This project is based on [this Julia library](https://github.com/kevin-tracy/DifferentiableCollisions.jl/tree/master?tab=readme-ov-file).
+This project aims to develop a differentiable collision detection system, re-implementing in Python [this Julia library](https://github.com/kevin-tracy/DifferentiableCollisions.jl/tree/master?tab=readme-ov-file)
 
 
 ## Installation
@@ -32,7 +32,7 @@ To install and set up this project locally, follow these steps:
 
 2. **Navigate to the project directory:**
    ```bash
-   cd DCOL-autonomous-driving
+   cd AMR24-FP6-DCOL
    ```
 
 3. **(optional) Create a virtual environment**

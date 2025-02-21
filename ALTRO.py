@@ -354,8 +354,6 @@ def import_system_modules(system_name):
         module_name = "systems.cluttered_hallway_quadrotor"
     elif system_name == "coneThroughWall":
         module_name = "systems.cone_through_wall"
-    elif system_name == "unicycle":
-        module_name = "systems.unicycle"
     else:
         raise ValueError(f"System '{system_name}' is not recognized. Must be 'piano_mover', 'quadrotor' or 'coneThroughWall'.")
 

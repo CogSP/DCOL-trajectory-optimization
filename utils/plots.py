@@ -3,6 +3,51 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 
+
+
+########################################################## UTILS MRP -> EULER ##########################################################
+
+
+def mrp_to_rotation_matrix(s):
+    """ 
+    Converte gli MRP in una matrice di rotazione.
+    """
+    s_norm2 = np.dot(s, s)
+    I = np.eye(3)
+    s_skew = np.array([[0, -s[2], s[1]],
+                       [s[2], 0, -s[0]],
+                       [-s[1], s[0], 0]])
+    
+    R = I + (8 * np.dot(s_skew, s_skew) - 4 * (1 - s_norm2) * s_skew) / (1 + s_norm2) ** 2
+    return R
+
+def rotation_matrix_to_euler(R):
+    """
+    Converte una matrice di rotazione in angoli di Eulero (Roll, Pitch, Yaw) in ordine ZYX.
+    """
+    pitch = np.arcsin(-R[2, 0]) 
+    
+    if np.abs(R[2, 0]) < 1:
+        roll = np.arctan2(R[2, 1], R[2, 2])
+        yaw = np.arctan2(R[1, 0], R[0, 0])
+    else:
+        roll = np.arctan2(-R[1, 2], R[1, 1])
+        yaw = 0  
+    
+    return np.array([roll, pitch, yaw])
+
+def mrp_to_euler(s):
+    """
+    Converte gli MRP direttamente in angoli di Eulero.
+    """
+    R = mrp_to_rotation_matrix(s)
+    euler_angles = rotation_matrix_to_euler(R)
+    return euler_angles
+
+
+########################################################## PLOTS ##########################################################
+
+
 def plot_cost(params, new_cost_list):
     """
     Plot and save the cost during iLQR optimization.
@@ -139,11 +184,22 @@ def plot_trajectories(X_hist, U_hist, params, iter):
     plt.close()
 
     # --- Plot Orientation ---
+
+    # Create a new array with the same shape as X_latest
+    X_euler = np.copy(X_latest)
+
+    # Plot orientation with Euler angles if system is quadrotor or coneThroughWall
+    if system in ['quadrotor', 'coneThroughWall']:
+        for t in range(N):
+            mrp = X_latest[t][orient_indices]  # Extract MRP values
+            euler_angles = mrp_to_euler(mrp)  # Convert to Euler angles
+            X_euler[t][orient_indices] = euler_angles  # Store Euler angles in the new array
+
     plt.figure(figsize=(12, 6))
     for i, idx in enumerate(orient_indices):
-        plt.plot(time_vector, [X_latest[t][idx] for t in range(N)], label=orient_labels[i])
+        plt.plot(time_vector, [X_euler[t][idx] for t in range(N)], label=orient_labels[i])
     plt.xlabel("Time [s]")
-    plt.ylabel("Orientation [rad]")  # Updated with units: rad
+    plt.ylabel("Orientation [rad]")
     plt.title("Orientation Trajectories")
     plt.legend()
     plt.grid()

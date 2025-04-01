@@ -4,9 +4,6 @@ This repo contains the code for a differentiable collision detection system, usi
 
 <img src="extras/images/alpha_polytopes.png" alt="Two Primitives" width="400">
 
-By Benedetta Rota (1936424), Camila Rota (1936447), Simone Palumbo (1938214)
-
-
 ## Table of Contents
 
 - [Introduction](#introduction)
